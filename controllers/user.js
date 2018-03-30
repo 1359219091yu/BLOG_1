@@ -16,13 +16,13 @@ const UserController = {
         User.findOne({username: username}).then(document => {
             let user = document;
             if (user) {
-                if (user.password == md5(password)) {
+                if (user.password== password) {
                     user.avatar = static(user.avatar);
                     req.session.user = user;
                     let url = req.session.originalUrl ? req.session.originalUrl : '/';
                     res.redirect(url);
                 } else {
-                    req.flash('error', '登录失败, 用户名密码错误！');
+                    req.flash('error', '登录失败, 密码错误！');
                     res.redirect("/users/login");
                 }
             } else {

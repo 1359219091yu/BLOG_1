@@ -4,7 +4,7 @@ const Article = require('../models/article');
 const static = require('../library/static');
 
 const LocalsMiddleware = (req, res, next) => {
-    res.locals.loginUser = req.session.user
+    res.locals.loginUser = req.session.user;
     res.locals.searchVal = req.query.searchVal ? req.query.searchVal : '';
     res.locals.error = req.flash('error');
     res.locals.info = req.flash('info');

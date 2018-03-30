@@ -35,6 +35,7 @@ const Home = {
                             let contents = trimHtml(data.contents, {limit: 100, preserveTags: false, sufix: '...'});
                             data.contents = contents.html;
                         })
+
                         res.render('index', {
                                 'list': document,
                                 'page': page,
